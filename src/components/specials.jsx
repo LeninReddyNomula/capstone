@@ -16,7 +16,7 @@ import { menu } from "./../data/menu";
 function Specials() {
   return (
     <Box
-      id="menu"
+      id={"menu"}
       height={"750px"}
       display={"flex"}
       justifyContent={"center"}
@@ -36,11 +36,12 @@ function Specials() {
             <HStack
               h={"400px"}
               display={"grid"}
-              gridTemplateColumns={"repeat(3,1fr)"}
-              gridAutoRows={"auto"}
+              gridTemplateColumns={["auto", "repeat(3,1fr)"]}
+              gridTemplateRows={["repeat(3,1fr)", "auto"]}
               gap={"1rem"}
               marginBlockStart={"1rem"}
               justifyItems={"center"}
+              overflow={["auto", "hidden"]}
             >
               {menu.map((item) => {
                 return (

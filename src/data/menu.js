@@ -1,7 +1,7 @@
 import { LoremIpsum, loremIpsum } from "lorem-ipsum";
 import lemon from "./../images/lemon dessert.jpg";
 import salad from "./../images/greek salad.jpg";
-import bruchetta from "./../images/bruchetta.svg";
+import bruchetta from "./../images/bruchetta.jpeg";
 
 const desc = loremIpsum({
   count: 20,

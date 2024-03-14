@@ -1,54 +1,37 @@
 import { Box, Image, ListItem, UnorderedList } from "@chakra-ui/react";
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useRef } from "react";
+import { Link, NavLink } from "react-router-dom";
 import image from "./../image.jpg";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
-  const style = {
-    display: "flex",
-    alignItems: "center",
-    width: "70%",
-    height: "100%",
+  const navRef = useRef();
+
+  const showNavBar = () => {
+    navRef.current.classList.toggle("responsive_nav");
   };
+
   return (
-    <Box h={"100px"} display={"flex"} justifyContent={"center"}>
-      <nav style={style}>
-        <Box flexGrow={0}>
-          <Image w={"100px"} src={image} />
-        </Box>
-        <Box
-          flexGrow={"1"}
-          justifyContent={"space-evenly"}
-          fontSize={"large"}
-          fontWeight={"600"}
-        >
-          <UnorderedList
-            listStyleType={"none"}
-            display={"flex"}
-            justifyContent={"space-evenly"}
-          >
-            <ListItem>
-              <NavLink to={"#home"}>Home</NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to={"#about"}>About</NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to={"#menu"}>Menu</NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to={"#"}>Reservations</NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to={"#"}>Order Online</NavLink>
-            </ListItem>
-            <ListItem>
-              <NavLink to={"#"}>Login</NavLink>
-            </ListItem>
-          </UnorderedList>
-        </Box>
+    <header>
+      <h3>
+        <img src={image} alt="logo" width={"150px"} />
+      </h3>
+      <nav ref={navRef}>
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={""}>About</NavLink>
+        <a href="#menu">Menu</a>
+
+        <NavLink to={"/booking"}>Reservations</NavLink>
+        <a href="#menu">Order Online</a>
+        <NavLink to={""}>Login</NavLink>
+        <button onClick={showNavBar} className="nav-btn nav-close-btn">
+          <FaTimes />
+        </button>
       </nav>
-    </Box>
+      <button onClick={showNavBar} className="nav-btn">
+        <FaBars />
+      </button>
+    </header>
   );
 }
 

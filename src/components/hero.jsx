@@ -2,6 +2,7 @@ import { Box, Button, Image } from "@chakra-ui/react";
 import React from "react";
 import LemonDetails from "./lemonDetails";
 import hero from "./../hero.jpg";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -12,30 +13,33 @@ function Hero() {
       display={"flex"}
       justifyContent={"center"}
       alignItems={"center"}
+      w={["100%", "100%", "100%"]}
     >
       <Box
-        w={"70%"}
+        w={["100%", "70%"]}
         h={"70%"}
         bgColor={"#494949"}
         display={"flex"}
         justifyContent={"space-evenly"}
       >
         <Box
-          w={"50%"}
+          w={["100%", "50%"]}
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"space-evenly"}
+          p={["1rem", ""]}
         >
           <LemonDetails />
           <Button maxW={"200px"} bgColor={"#F4CE14"}>
-            Reserve a Table
+            <Link to={"/booking"}>Reserve a table</Link>
           </Button>
         </Box>
         <Box
-          w={"50%"}
+          w={["0", "50%"]}
           display={"flex"}
           justifyContent={"center"}
           position={"relative"}
+          visibility={["hidden", "visible", "visible"]}
         >
           <Image
             src={hero}

@@ -8,13 +8,12 @@ function Footer() {
     <Box
       display={"flex"}
       justifyContent={"center"}
-      h={["auto", "500px"]}
+      h={["auto"]}
       alignItems={"center"}
     >
       <Box
         w={["100%", "70%"]}
         h={"80%"}
-        bgColor={"tomato"}
         display={"grid"}
         gridTemplateColumns={"repeat(4,1fr)"}
       >

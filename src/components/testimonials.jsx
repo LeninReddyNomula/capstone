@@ -11,14 +11,15 @@ function Testimonials() {
       alignItems={"center"}
       bgColor={"#494949"}
     >
-      <VStack w={"70%"} h={"70%"} display={"flex"}>
+      <VStack w={["100%", "70%"]} h={"70%"} display={"flex"}>
         <Heading size={"md"} color={"#F4CE14"}>
           Testimonials
         </Heading>
         <HStack
-          marginBlockStart={"3rem"}
+          marginBlockStart={["0", "3rem"]}
           width={"100%"}
           justifyContent={"space-evenly"}
+          overflowX={["scroll", "hidden"]}
         >
           {reviews.map((item) => {
             return (
